@@ -1,12 +1,12 @@
 version: "latest"
 
 services:
-  next-js-devcontainer: # 👈 Name of the service
+  tomblanc-fr-frontend: # 👈 Name of the service
     build:
       context: ../ # build the image from the parent directory
       dockerfile: ./.devcontainer/Dockerfile # use the Dockerfile in the .devcontainer directory
       target: development # use the development stage in the Dockerfile choise between development | production
-    container_name: next-js-devcontainer
+    container_name: tomblanc-fr-frontend
     ports:
       - "3000:3000"
     volumes:
