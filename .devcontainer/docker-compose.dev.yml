@@ -1,0 +1,16 @@
+version: "latest"
+
+services:
+  next-js-devcontainer: # 👈 Name of the service
+    build:
+      context: ../ # build the image from the parent directory
+      dockerfile: ./.devcontainer/Dockerfile # use the Dockerfile in the .devcontainer directory
+      target: development # use the development stage in the Dockerfile choise between development | production
+    container_name: next-js-devcontainer
+    ports:
+      - "3000:3000"
+    volumes:
+      - ..:/workspace:cached # mount the current directory as workspace to the container
+    environment:
+      APP_HOME: /workspace # set the environment variable APP_HOME to the workspace directory
+      NODE_ENV: development # set the environment variable NODE_ENV to development

@@ -1,0 +1,102 @@
+{
+	"name": "next-js-devcontainer",
+	"dockerComposeFile": [
+		// "../../docker-compose.yml", // ! 👈 Uncomment or change this to the path of your docker-compose file.
+		"./docker-compose.dev.yml"
+	],
+	"service": "next-js-devcontainer",
+	"workspaceFolder": "/workspace",
+	"shutdownAction": "stopCompose",
+	"postCreateCommand": "bash /workspace/.devcontainer/scripts/post-create.sh",
+	"postStartCommand": "bash /workspace/.devcontainer/scripts/post-start.sh",
+	"containerEnv": {
+		"GIT_TEMPLATE_REPO_URLS": "https://github.com/tomblancdev/next-js-devcontainer.git", // ! 👈 Change this to your templates repositories.
+		"GIT_TEMPLATE_REMOTE_NAME": "TEMPLATE" // ! 👈 Change this to your template remote.
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"github.copilot", // Copilot extension for VS Code
+				"github.vscode-pull-request-github", // Pull Request extension for VS Code
+				"aaron-bond.better-comments", // Better Comments extension for VS Code
+				"streetsidesoftware.code-spell-checker", // Code Spell Checker extension for VS Code
+				"biomejs.biome", // Biome extension for VS Code
+				"bradlc.vscode-tailwindcss", // Tailwind CSS IntelliSense extension for VS Code
+				"formulahendry.auto-rename-tag", // Auto Rename Tag extension for VS Code
+				"britesnow.vscode-toggle-quotes", // Toggle Quotes extension for VS Code
+				"christian-kohler.path-intellisense" // Path Intellisense extension for VS Code
+			],
+			"settings": {
+				// ### Global settings ###
+				"editor.codeActionsOnSave": {
+					"source.organizeImports": "explicit",
+					"source.fixAll": "explicit"
+				},
+				"editor.formatOnSave": true,
+				"editor.formatOnPaste": true,
+				// ### Typescript settings ###
+				"[typescript]": {
+					"editor.defaultFormatter": "biomejs.biome",
+					"editor.codeActionsOnSave": {
+						"quickfix.biome": "explicit",
+						"source.organizeImports.biome": "explicit"
+					},
+					"togglequotes.chars": [
+						"\"",
+						"'",
+						"`"
+					]
+				},
+				// ### Javascript settings ###
+				"[javascript]": {
+					"editor.defaultFormatter": "biomejs.biome",
+					"editor.codeActionsOnSave": {
+						"quickfix.biome": "explicit",
+						"source.organizeImports.biome": "explicit"
+					},
+					"togglequotes.chars": [
+						"\"",
+						"'",
+						"`"
+					]
+				},
+				// ### TSX settings ###
+				"[typescriptreact]": {
+					"editor.defaultFormatter": "biomejs.biome",
+					"editor.codeActionsOnSave": {
+						"quickfix.biome": "explicit",
+						"source.organizeImports.biome": "explicit"
+					},
+					"togglequotes.chars": [
+						"\"",
+						"'",
+						"`"
+					]
+				},
+				// ### JSX settings ###
+				"[javascriptreact]": {
+					"editor.defaultFormatter": "biomejs.biome",
+					"editor.codeActionsOnSave": {
+						"quickfix.biome": "explicit",
+						"source.organizeImports.biome": "explicit"
+					},
+					"togglequotes.chars": [
+						"\"",
+						"'",
+						"`"
+					]
+				},
+				// ### JSON settings ###
+				"[json]": {
+					"editor.defaultFormatter": "vscode.json-language-features"
+				}
+			}
+		}
+	},
+	"features": {
+		"ghcr.io/prulloac/devcontainer-features/bun:1": {},
+		"ghcr.io/devcontainers-contrib/features/pre-commit:2": {}
+	},
+	// 👇 Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "root"
+}

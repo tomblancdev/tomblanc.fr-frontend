@@ -1,0 +1,10 @@
+docker-compose.dev.yml
+Dockerfile
+.github
+.next
+.vscode
+.gitattributes
+.gitignore
+.pre-commit-config.yaml
+biome.json
+node_modules
