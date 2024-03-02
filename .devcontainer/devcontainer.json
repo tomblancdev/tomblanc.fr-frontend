@@ -1,10 +1,10 @@
 {
-	"name": "next-js-devcontainer",
+	"name": "tomblanc-fr-frontend",
 	"dockerComposeFile": [
 		// "../../docker-compose.yml", // ! 👈 Uncomment or change this to the path of your docker-compose file.
 		"./docker-compose.dev.yml"
 	],
-	"service": "next-js-devcontainer",
+	"service": "tomblanc-fr-frontend",
 	"workspaceFolder": "/workspace",
 	"shutdownAction": "stopCompose",
 	"postCreateCommand": "bash /workspace/.devcontainer/scripts/post-create.sh",
